@@ -11,5 +11,5 @@ terraform {
 #Provider Configuration
 provider "aws" {
   profile = "terraform_denis" #Get profile from .aws/config
-  region  = "us-west-2"
+  region  = var.aws_region
 }

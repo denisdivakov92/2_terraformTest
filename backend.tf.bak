@@ -1,4 +1,4 @@
-/* terraform {
+terraform {
 backend "s3" {
 bucket = "denis-practice-tf-state-2024"
 key = "dev/terraform.tfstate"
@@ -8,4 +8,3 @@ encrypt = true
 profile = "terraform_denis" # Got it from ~/.aws/config 
 }
 }
-*/
