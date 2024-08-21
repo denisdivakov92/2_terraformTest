@@ -3,10 +3,7 @@ resource "aws_launch_template" "asg" {
   image_id               = data.aws_ami.ubuntu.id
   instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
-
-  tags = {
-    Name = "My-ASG-Launch-Template"
-  }
+  
 }
 
 resource "aws_autoscaling_group" "asg" {
@@ -22,4 +19,9 @@ resource "aws_autoscaling_group" "asg" {
     version = "$Latest"
   }
 
+  tag {
+    key                 = "Name"
+    value               = "Hello-${count.index + 1}"
+    propagate_at_launch = true
+  }
 }

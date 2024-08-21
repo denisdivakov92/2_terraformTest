@@ -128,5 +128,3 @@ variable "master_password" {
   type      = string
   sensitive = true
 }
-
-########################### RDS subnet group ############################

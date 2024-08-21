@@ -1,15 +1,16 @@
 resource "aws_dynamodb_table" "dynamodb-table" {
-  name         = "terraformLock"
-  billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "UserId"
+  name           = "terraformLockNew"
+  billing_mode   = "PROVISIONED"
+  read_capacity  = 5
+  write_capacity = 5
+  hash_key       = "LockID"
 
   attribute {
-    name = "UserId"
+    name = "LockID"
     type = "S"
   }
-
-
 }
+
 resource "aws_s3_bucket" "example" {
   bucket = "denis-practice-tf-state-2024"
 
