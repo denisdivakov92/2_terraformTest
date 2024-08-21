@@ -63,7 +63,32 @@ variable "subnet_count" {
   type        = number
   default     = 6
 }
-#################  RDs #############################################
+
+###################### Route Table ################################
+
+variable "vpc_id" {
+  description = "The ID of the VPC"
+  type        = string
+}
+
+variable "subnet_ids" {
+  description = "List of subnet IDs to associate with the route table"
+  type        = list(string)
+}
+
+variable "igw_name" {
+  description = "Name tag for the Internet Gateway"
+  type        = string
+  default     = "IGW"
+}
+
+variable "route_table_name" {
+  description = "Name tag for the Route Table"
+  type        = string
+  default     = "Public"
+}
+
+#######################  RDs ######################################
 variable "cluster_identifier" {
   type    = string
   default = "my-rds-01"
@@ -103,3 +128,5 @@ variable "master_password" {
   type      = string
   sensitive = true
 }
+
+########################### RDS subnet group ############################
