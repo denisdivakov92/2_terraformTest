@@ -65,7 +65,7 @@ variable "subnet_count" {
 }
 
 ###################### Route Table ################################
-
+/*
 variable "vpc_id" {
   description = "The ID of the VPC"
   type        = string
@@ -75,7 +75,7 @@ variable "subnet_ids" {
   description = "List of subnet IDs to associate with the route table"
   type        = list(string)
 }
-
+*/
 variable "igw_name" {
   description = "Name tag for the Internet Gateway"
   type        = string
